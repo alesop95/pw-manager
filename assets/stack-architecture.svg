@@ -1,0 +1,337 @@
+<svg width="1400" height="980" viewBox="0 0 1400 980" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="aB" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#3B82F6"/></marker>
+    <marker id="aG" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#6B7280"/></marker>
+    <marker id="aD" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#4B5563"/></marker>
+    <marker id="aR" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#DC2626"/></marker>
+    <marker id="aO" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0,9 3.5,0 7" fill="#EA580C"/></marker>
+  </defs>
+
+  <!-- PAGE BACKGROUND -->
+  <rect width="1400" height="980" fill="#F1F5F9"/>
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <rect x="0" y="0" width="1400" height="68" fill="#0F172A"/>
+  <text x="700" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="white">Architettura Completa — Password Manager + TOTP Authenticator</text>
+  <text x="700" y="52" text-anchor="middle" font-size="11" fill="#94A3B8">Vaultwarden self-hosted (Oracle Cloud ARM / Home Server)  ·  Ente Auth E2EE (TOTP separato)  ·  Giugno 2026</text>
+
+  <!-- ═══════════════ LEFT PANEL — CLIENT LAYER ═══════════════ -->
+  <rect x="12" y="78" width="468" height="492" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+  <rect x="12" y="78" width="468" height="28" rx="8" fill="#2563EB"/>
+  <rect x="12" y="92" width="468" height="14" fill="#2563EB"/>
+  <text x="246" y="97" text-anchor="middle" font-size="12" font-weight="bold" fill="white">CLIENT LAYER</text>
+
+  <!-- Device: Windows -->
+  <rect x="22" y="115" width="193" height="100" rx="6" fill="white" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="22" y="115" width="193" height="22" rx="5" fill="#DBEAFE"/>
+  <rect x="22" y="127" width="193" height="10" fill="#DBEAFE"/>
+  <text x="118" y="130" text-anchor="middle" font-size="10" font-weight="bold" fill="#1E40AF">Windows</text>
+  <text x="118" y="149" text-anchor="middle" font-size="9" fill="#374151">Chrome + estensione Bitwarden</text>
+  <text x="118" y="163" text-anchor="middle" font-size="9" fill="#374151">Autofill inline · native messaging</text>
+  <text x="118" y="177" text-anchor="middle" font-size="9" fill="#374151">Biometrica: Windows Hello</text>
+  <text x="118" y="191" text-anchor="middle" font-size="8" fill="#6B7280">client desktop → biometric unlock</text>
+  <text x="118" y="206" text-anchor="middle" font-size="8" fill="#6B7280">(opzionale per autofill)</text>
+
+  <!-- Device: Linux -->
+  <rect x="22" y="228" width="193" height="100" rx="6" fill="white" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="22" y="228" width="193" height="22" rx="5" fill="#DBEAFE"/>
+  <rect x="22" y="240" width="193" height="10" fill="#DBEAFE"/>
+  <text x="118" y="243" text-anchor="middle" font-size="10" font-weight="bold" fill="#1E40AF">Linux</text>
+  <text x="118" y="262" text-anchor="middle" font-size="9" fill="#374151">Chrome + estensione Bitwarden</text>
+  <text x="118" y="276" text-anchor="middle" font-size="9" fill="#374151">Autofill inline</text>
+  <text x="118" y="290" text-anchor="middle" font-size="9" fill="#374151">Biometrica: fingerprint reader</text>
+  <text x="118" y="304" text-anchor="middle" font-size="8" fill="#16A34A">supporto biometrico da marzo 2025</text>
+  <text x="118" y="318" text-anchor="middle" font-size="8" fill="#6B7280">client desktop opzionale</text>
+
+  <!-- Device: Samsung S25 Ultra -->
+  <rect x="22" y="342" width="193" height="115" rx="6" fill="white" stroke="#93C5FD" stroke-width="1.5"/>
+  <rect x="22" y="342" width="193" height="22" rx="5" fill="#DBEAFE"/>
+  <rect x="22" y="354" width="193" height="10" fill="#DBEAFE"/>
+  <text x="118" y="357" text-anchor="middle" font-size="10" font-weight="bold" fill="#1E40AF">Samsung S25 Ultra</text>
+  <text x="118" y="376" text-anchor="middle" font-size="9" fill="#374151">App Android nativa Bitwarden</text>
+  <text x="118" y="390" text-anchor="middle" font-size="9" fill="#374151">Android Autofill Framework</text>
+  <text x="118" y="405" text-anchor="middle" font-size="9" fill="#374151">Chrome: canale autofill protetto</text>
+  <text x="118" y="420" text-anchor="middle" font-size="8" fill="#DC2626">Chrome ≥ 135 richiesto</text>
+  <text x="118" y="434" text-anchor="middle" font-size="8" fill="#374151">impronta + face unlock</text>
+  <text x="118" y="447" text-anchor="middle" font-size="8" fill="#6B7280">iniezione diretta nei campi Chrome</text>
+
+  <!-- CLIENT CONFIG NOTE -->
+  <rect x="22" y="470" width="193" height="45" rx="5" fill="#F0F9FF" stroke="#BAE6FD" stroke-width="1"/>
+  <text x="118" y="486" text-anchor="middle" font-size="9" font-weight="bold" fill="#0C4A6E">Configurazione client</text>
+  <text x="118" y="500" text-anchor="middle" font-size="8" fill="#374151">Settings → Self-hosted</text>
+  <text x="118" y="512" text-anchor="middle" font-size="8" fill="#374151">URL: https://vaultname.duckdns.org</text>
+
+  <!-- ═══ CRYPTO CHAIN (inside client panel, right half) ═══ -->
+  <rect x="224" y="110" width="248" height="455" rx="6" fill="#F0FDF4" stroke="#4ADE80" stroke-width="1.5"/>
+  <text x="348" y="130" text-anchor="middle" font-size="10" font-weight="bold" fill="#166534">DERIVAZIONE CHIAVE</text>
+  <text x="348" y="145" text-anchor="middle" font-size="8.5" fill="#15803D">avviene esclusivamente sul client</text>
+  <text x="348" y="158" text-anchor="middle" font-size="8.5" fill="#15803D">il master password non lascia mai il dispositivo</text>
+
+  <!-- Box: Input -->
+  <rect x="234" y="165" width="228" height="28" rx="4" fill="white" stroke="#86EFAC" stroke-width="1"/>
+  <text x="348" y="183" text-anchor="middle" font-size="9" font-weight="bold" fill="#065F46">Email (salt)  +  Master Password</text>
+
+  <!-- Arrow -->
+  <line x1="348" y1="193" x2="348" y2="207" stroke="#4B5563" stroke-width="1.5" marker-end="url(#aD)"/>
+  <text x="390" y="204" font-size="8" fill="#6B7280">PBKDF2 · SHA-256</text>
+
+  <!-- Box: Master Key -->
+  <rect x="234" y="208" width="228" height="28" rx="4" fill="#BBF7D0" stroke="#4ADE80" stroke-width="1.5"/>
+  <text x="348" y="226" text-anchor="middle" font-size="9" font-weight="bold" fill="#065F46">Master Key — 256 bit — LOCALE</text>
+
+  <!-- Fork lines -->
+  <line x1="298" y1="236" x2="272" y2="255" stroke="#4B5563" stroke-width="1.2"/>
+  <line x1="398" y1="236" x2="418" y2="255" stroke="#4B5563" stroke-width="1.2"/>
+  <text x="348" y="250" text-anchor="middle" font-size="8" fill="#6B7280">HKDF</text>
+
+  <!-- Box: Master Pwd Hash (left) -->
+  <rect x="234" y="256" width="112" height="40" rx="4" fill="#FEF9C3" stroke="#FDE047" stroke-width="1"/>
+  <text x="290" y="271" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#713F12">Master Pwd Hash</text>
+  <text x="290" y="284" text-anchor="middle" font-size="8" fill="#92400E">→ server</text>
+  <text x="290" y="293" text-anchor="middle" font-size="7.5" fill="#92400E">(solo autenticazione)</text>
+
+  <!-- Arrow from Master Pwd Hash to server (right-pointing dashed) -->
+  <line x1="346" y1="276" x2="358" y2="276" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#aG)"/>
+
+  <!-- Box: Stretched Master Key (right) -->
+  <rect x="354" y="256" width="108" height="40" rx="4" fill="#DCFCE7" stroke="#4ADE80" stroke-width="1"/>
+  <text x="408" y="271" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#166534">Stretched MK</text>
+  <text x="408" y="284" text-anchor="middle" font-size="8" fill="#15803D">memoria locale</text>
+  <text x="408" y="293" text-anchor="middle" font-size="7.5" fill="#15803D">non lascia mai</text>
+
+  <!-- Arrow down from Stretched MK -->
+  <line x1="408" y1="296" x2="408" y2="312" stroke="#4B5563" stroke-width="1.5" marker-end="url(#aD)"/>
+  <!-- Merge line to center -->
+  <line x1="348" y1="312" x2="408" y2="312" stroke="#4B5563" stroke-width="1"/>
+  <line x1="348" y1="296" x2="348" y2="326" stroke="#4B5563" stroke-width="1.5" marker-end="url(#aD)"/>
+  <text x="440" y="308" font-size="8" fill="#6B7280">AES-256-CBC</text>
+
+  <!-- Box: Protected Sym Key -->
+  <rect x="234" y="327" width="228" height="28" rx="4" fill="#DCFCE7" stroke="#4ADE80" stroke-width="1"/>
+  <text x="348" y="345" text-anchor="middle" font-size="9" font-weight="bold" fill="#065F46">Protected Symmetric Key</text>
+
+  <!-- Arrow down -->
+  <line x1="348" y1="355" x2="348" y2="369" stroke="#4B5563" stroke-width="1.5" marker-end="url(#aD)"/>
+  <text x="390" y="366" font-size="8" fill="#6B7280">AES-256-CBC</text>
+
+  <!-- Box: Vault in chiaro -->
+  <rect x="234" y="370" width="228" height="28" rx="4" fill="#BBF7D0" stroke="#22C55E" stroke-width="2"/>
+  <text x="348" y="388" text-anchor="middle" font-size="9" font-weight="bold" fill="#065F46">Vault in chiaro — credenziali + TOTP</text>
+
+  <!-- Zero-knowledge note -->
+  <rect x="234" y="408" width="228" height="42" rx="4" fill="#FEF2F2" stroke="#FECACA" stroke-width="1"/>
+  <text x="348" y="424" text-anchor="middle" font-size="9" font-weight="bold" fill="#DC2626">ZERO-KNOWLEDGE</text>
+  <text x="348" y="438" text-anchor="middle" font-size="8" fill="#991B1B">Il server riceve esclusivamente il blob</text>
+  <text x="348" y="449" text-anchor="middle" font-size="8" fill="#991B1B">AES-256 già cifrato — non ha chiavi</text>
+
+  <!-- Sync note -->
+  <rect x="234" y="458" width="228" height="38" rx="4" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="348" y="473" text-anchor="middle" font-size="9" font-weight="bold" fill="#1D4ED8">SYNC — TLS 1.3</text>
+  <text x="348" y="486" text-anchor="middle" font-size="8" fill="#1E40AF">blob cifrato ↔ Vaultwarden server</text>
+  <text x="348" y="497" text-anchor="middle" font-size="8" fill="#1E40AF">aggiornamento real-time multi-device</text>
+
+  <!-- ═══════════════ NETWORK CONNECTOR ═══════════════ -->
+  <!-- Arrow right (sync) -->
+  <line x1="483" y1="295" x2="544" y2="295" stroke="#3B82F6" stroke-width="2.5" marker-end="url(#aB)"/>
+  <text x="513" y="287" text-anchor="middle" font-size="9" font-weight="bold" fill="#1D4ED8">HTTPS</text>
+  <text x="513" y="300" text-anchor="middle" font-size="8" fill="#3B82F6">TLS 1.3</text>
+  <!-- Arrow left (response) -->
+  <line x1="544" y1="318" x2="483" y2="318" stroke="#6B7280" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#aG)"/>
+  <text x="513" y="334" text-anchor="middle" font-size="8" fill="#6B7280">vault blob</text>
+
+  <!-- ═══════════════ RIGHT PANEL — INFRASTRUCTURE ═══════════════ -->
+  <rect x="552" y="78" width="836" height="492" rx="8" fill="#F5F3FF" stroke="#8B5CF6" stroke-width="2"/>
+  <rect x="552" y="78" width="836" height="28" rx="8" fill="#6D28D9"/>
+  <rect x="552" y="92" width="836" height="14" fill="#6D28D9"/>
+  <text x="970" y="97" text-anchor="middle" font-size="12" font-weight="bold" fill="white">INFRASTRUCTURE LAYER</text>
+
+  <!-- Oracle Cloud outer box -->
+  <rect x="562" y="112" width="478" height="452" rx="6" fill="#FAF5FF" stroke="#7C3AED" stroke-width="1.5"/>
+  <rect x="562" y="112" width="478" height="26" rx="5" fill="#7C3AED"/>
+  <rect x="562" y="128" width="478" height="10" fill="#7C3AED"/>
+  <text x="801" y="129" text-anchor="middle" font-size="11" font-weight="bold" fill="white">Oracle Cloud Always Free Tier</text>
+  <text x="801" y="148" text-anchor="middle" font-size="8.5" fill="#5B21B6">VM.Standard.A1.Flex · 4 OCPUs ARM Ampere · 24 GB RAM · 200 GB storage · 10 TB/mese egress</text>
+
+  <!-- Docker-compose label -->
+  <rect x="572" y="157" width="458" height="22" rx="3" fill="#7C3AED" opacity="0.15"/>
+  <text x="801" y="172" text-anchor="middle" font-size="9" font-weight="bold" fill="#5B21B6">docker-compose.yml</text>
+
+  <!-- Container: Caddy -->
+  <rect x="572" y="184" width="458" height="82" rx="4" fill="white" stroke="#D1D5DB" stroke-width="1"/>
+  <rect x="572" y="184" width="8" height="82" rx="2" fill="#10B981"/>
+  <text x="810" y="202" text-anchor="middle" font-size="10" font-weight="bold" fill="#064E3B">caddy:alpine</text>
+  <text x="810" y="218" text-anchor="middle" font-size="9" fill="#374151">Reverse proxy · termina TLS · provisioning Let's Encrypt via ACME automatico</text>
+  <text x="810" y="232" text-anchor="middle" font-size="9" fill="#374151">Porte: 80:80, 443:443 · proxy interno verso vaultwarden:80</text>
+  <text x="810" y="247" text-anchor="middle" font-size="8.5" fill="#6B7280">Caddyfile: vaultname.duckdns.org { reverse_proxy vaultwarden:80 }</text>
+  <text x="810" y="260" text-anchor="middle" font-size="8" fill="#6B7280">Vaultwarden mai esposto direttamente su Internet</text>
+
+  <!-- Container: Vaultwarden -->
+  <rect x="572" y="272" width="458" height="102" rx="4" fill="white" stroke="#D1D5DB" stroke-width="1"/>
+  <rect x="572" y="272" width="8" height="102" rx="2" fill="#3B82F6"/>
+  <text x="810" y="290" text-anchor="middle" font-size="10" font-weight="bold" fill="#1E3A8A">vaultwarden/server:latest</text>
+  <text x="810" y="306" text-anchor="middle" font-size="9" fill="#374151">Reimplementazione API Bitwarden in Rust · immagine multi-arch ARM64</text>
+  <text x="810" y="320" text-anchor="middle" font-size="9" fill="#374151">Database: SQLite — singolo file /data/db.sqlite3 · volume: ./vw-data:/data</text>
+  <text x="810" y="334" text-anchor="middle" font-size="9" fill="#374151">Feature Premium abilitate per default: TOTP, allegati, emergency access</text>
+  <text x="810" y="349" text-anchor="middle" font-size="8.5" fill="#6B7280">SIGNUPS_ALLOWED: false · ADMIN_TOKEN: hash Argon2 · DOMAIN: https://vaultname.duckdns.org</text>
+  <text x="810" y="366" text-anchor="middle" font-size="8.5" fill="#6B7280">restart: unless-stopped · compatibile con tutti i client ufficiali Bitwarden</text>
+
+  <!-- Container: DuckDNS -->
+  <rect x="572" y="380" width="458" height="58" rx="4" fill="white" stroke="#D1D5DB" stroke-width="1"/>
+  <rect x="572" y="380" width="8" height="58" rx="2" fill="#F59E0B"/>
+  <text x="810" y="398" text-anchor="middle" font-size="10" font-weight="bold" fill="#78350F">linuxserver/duckdns</text>
+  <text x="810" y="413" text-anchor="middle" font-size="9" fill="#374151">Aggiorna IP pubblico Oracle sul sottodominio DuckDNS.org ogni 5 minuti</text>
+  <text x="810" y="428" text-anchor="middle" font-size="8.5" fill="#6B7280">SUBDOMAINS: vaultname · TOKEN: ${DUCKDNS_TOKEN} · TZ: Europe/Rome</text>
+
+  <!-- Cron: idle reclaim mitigation -->
+  <rect x="572" y="444" width="458" height="36" rx="4" fill="#FEF2F2" stroke="#FECACA" stroke-width="1"/>
+  <text x="810" y="460" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#DC2626">Mitigazione Oracle idle reclaim — CPU soglia 20%  @  95° percentile / 7 giorni</text>
+  <text x="810" y="473" text-anchor="middle" font-size="8" fill="#991B1B">cron: 0 */6 * * *  curl -s http://localhost/alive &gt;/dev/null  (health check Vaultwarden, no auth richiesta)</text>
+
+  <!-- Backup -->
+  <rect x="572" y="486" width="458" height="36" rx="4" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1"/>
+  <text x="810" y="502" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#78350F">Backup obbligatorio: ./vw-data/db.sqlite3</text>
+  <text x="810" y="515" text-anchor="middle" font-size="8" fill="#92400E">Perdita dati permanente senza backup · rclone → Google Drive / S3 / altro storage gratuito</text>
+
+  <!-- ── External Services (right of Oracle box) ── -->
+  <!-- Let's Encrypt -->
+  <rect x="1053" y="112" width="327" height="72" rx="6" fill="white" stroke="#6EE7B7" stroke-width="1.5"/>
+  <text x="1216" y="133" text-anchor="middle" font-size="10" font-weight="bold" fill="#065F46">Let's Encrypt / ACME</text>
+  <text x="1216" y="149" text-anchor="middle" font-size="9" fill="#374151">CA gratuita · rinnovo certificato TLS</text>
+  <text x="1216" y="163" text-anchor="middle" font-size="8.5" fill="#6B7280">automatico — gestito da Caddy</text>
+  <text x="1216" y="176" text-anchor="middle" font-size="8" fill="#6B7280">nessuna configurazione manuale</text>
+  <!-- Arrow from Caddy to Let's Encrypt -->
+  <line x1="1030" y1="225" x2="1051" y2="148" stroke="#10B981" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#aD)"/>
+  <text x="1038" y="185" font-size="8" fill="#059669">ACME</text>
+
+  <!-- DuckDNS.org -->
+  <rect x="1053" y="195" width="327" height="72" rx="6" fill="white" stroke="#FDE68A" stroke-width="1.5"/>
+  <text x="1216" y="216" text-anchor="middle" font-size="10" font-weight="bold" fill="#78350F">DuckDNS.org</text>
+  <text x="1216" y="232" text-anchor="middle" font-size="9" fill="#374151">Sottodominio pubblico gratuito</text>
+  <text x="1216" y="247" text-anchor="middle" font-size="8.5" fill="#6B7280">vaultname.duckdns.org → IP Oracle VM</text>
+  <text x="1216" y="259" text-anchor="middle" font-size="8" fill="#6B7280">nessun account di pagamento</text>
+  <!-- Arrow from DuckDNS container to DuckDNS.org -->
+  <line x1="1030" y1="409" x2="1051" y2="245" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#aD)"/>
+  <text x="1040" y="330" font-size="8" fill="#D97706">DNS API</text>
+
+  <!-- Alt: Home Server -->
+  <rect x="1053" y="278" width="327" height="100" rx="6" fill="#F0F9FF" stroke="#BAE6FD" stroke-width="1.5"/>
+  <text x="1216" y="298" text-anchor="middle" font-size="10" font-weight="bold" fill="#0C4A6E">Alternativa: Home Server</text>
+  <text x="1216" y="315" text-anchor="middle" font-size="9" fill="#374151">Raspberry Pi / NAS / PC sempre acceso</text>
+  <text x="1216" y="330" text-anchor="middle" font-size="9" fill="#374151">Cloudflare Tunnel (gratuito, zero porte aperte)</text>
+  <text x="1216" y="345" text-anchor="middle" font-size="8.5" fill="#374151">Nessun rischio idle reclaim Oracle</text>
+  <text x="1216" y="360" text-anchor="middle" font-size="8" fill="#6B7280">Richiede dominio (~$1-3/anno TLD economico)</text>
+  <text x="1216" y="373" text-anchor="middle" font-size="8" fill="#6B7280">stesso stack docker-compose, URL diverso</text>
+
+  <!-- Payment info -->
+  <rect x="1053" y="390" width="327" height="72" rx="6" fill="#F0FFF4" stroke="#A7F3D0" stroke-width="1.5"/>
+  <text x="1216" y="410" text-anchor="middle" font-size="10" font-weight="bold" fill="#065F46">Oracle: carta di debito accettata</text>
+  <text x="1216" y="426" text-anchor="middle" font-size="9" fill="#374151">Visa Debit / Mastercard Debit senza PIN</text>
+  <text x="1216" y="441" text-anchor="middle" font-size="8.5" fill="#374151">Verifica $1 USD stornata in 3-5 giorni</text>
+  <text x="1216" y="456" text-anchor="middle" font-size="8" fill="#6B7280">Maestro/Bancomat puro non accettato</text>
+
+  <!-- Bitwarden compatible note -->
+  <rect x="1053" y="474" width="327" height="72" rx="6" fill="#FFF7ED" stroke="#FED7AA" stroke-width="1.5"/>
+  <text x="1216" y="494" text-anchor="middle" font-size="10" font-weight="bold" fill="#9A3412">Client Bitwarden ufficiali</text>
+  <text x="1216" y="510" text-anchor="middle" font-size="9" fill="#374151">Tutti i client ufficiali Bitwarden compatibili</text>
+  <text x="1216" y="525" text-anchor="middle" font-size="8.5" fill="#374151">Windows · Linux · Android · Chrome ext.</text>
+  <text x="1216" y="540" text-anchor="middle" font-size="8" fill="#6B7280">Vaultwarden espone API identica a Bitwarden</text>
+
+  <!-- ═══════════════ ENTE AUTH — BOTTOM SECTION ═══════════════ -->
+  <rect x="12" y="582" width="1376" height="388" rx="8" fill="#FFF7ED" stroke="#F97316" stroke-width="2"/>
+  <rect x="12" y="582" width="1376" height="30" rx="8" fill="#EA580C"/>
+  <rect x="12" y="598" width="1376" height="14" fill="#EA580C"/>
+  <text x="700" y="603" text-anchor="middle" font-size="12" font-weight="bold" fill="white">ENTE AUTH — Autenticatore TOTP · Infrastruttura completamente separata da Vaultwarden</text>
+
+  <!-- LEFT: Separation rationale -->
+  <rect x="22" y="622" width="400" height="338" rx="6" fill="white" stroke="#FED7AA" stroke-width="1.5"/>
+  <text x="222" y="644" text-anchor="middle" font-size="11" font-weight="bold" fill="#9A3412">SEPARAZIONE DEI SEGRETI</text>
+
+  <rect x="32" y="653" width="380" height="72" rx="4" fill="#FEF2F2" stroke="#FECACA" stroke-width="1"/>
+  <text x="222" y="670" text-anchor="middle" font-size="9" font-weight="bold" fill="#DC2626">Scenario: TOTP unificato in Vaultwarden</text>
+  <text x="222" y="685" text-anchor="middle" font-size="8.5" fill="#7F1D1D">Compromissione vault → attaccante ottiene</text>
+  <text x="222" y="699" text-anchor="middle" font-size="8.5" fill="#7F1D1D">password + seed TOTP in unica operazione</text>
+  <text x="222" y="713" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#991B1B">2FA completamente neutralizzato</text>
+  <text x="222" y="718" text-anchor="middle" font-size="8" fill="#991B1B"></text>
+
+  <rect x="32" y="733" width="380" height="75" rx="4" fill="#F0FDF4" stroke="#BBF7D0" stroke-width="1"/>
+  <text x="222" y="751" text-anchor="middle" font-size="9" font-weight="bold" fill="#166534">Scenario: separazione con Ente Auth</text>
+  <text x="222" y="766" text-anchor="middle" font-size="8.5" fill="#14532D">Compromissione Vaultwarden → sole password</text>
+  <text x="222" y="780" text-anchor="middle" font-size="8.5" fill="#14532D">Seed TOTP su infrastruttura Ente separata</text>
+  <text x="222" y="794" text-anchor="middle" font-size="8.5" fill="#14532D">Master password Ente ≠ Master password Vaultwarden</text>
+  <text x="222" y="806" text-anchor="middle" font-size="8" fill="#166534">Due attacchi su infrastrutture diverse richiesti</text>
+
+  <rect x="32" y="816" width="380" height="40" rx="4" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1"/>
+  <text x="222" y="832" text-anchor="middle" font-size="9" font-weight="bold" fill="#78350F">Consigliato per profilo di rischio conservativo</text>
+  <text x="222" y="846" text-anchor="middle" font-size="8" fill="#92400E">Bitwarden TOTP integrato rimane una valida alternativa per uso personale</text>
+
+  <text x="222" y="878" text-anchor="middle" font-size="8" fill="#6B7280">Account Ente: solo email · nessun metodo di pagamento</text>
+  <text x="222" y="892" text-anchor="middle" font-size="8" fill="#6B7280">Modalità locale senza account disponibile (backup manuale cifrato)</text>
+  <text x="222" y="906" text-anchor="middle" font-size="8" fill="#6B7280">Self-hosted: 3 container (museum + PostgreSQL + MinIO) — più complesso</text>
+
+  <!-- MIDDLE: Architecture -->
+  <rect x="435" y="622" width="410" height="338" rx="6" fill="white" stroke="#FED7AA" stroke-width="1.5"/>
+  <text x="640" y="644" text-anchor="middle" font-size="11" font-weight="bold" fill="#9A3412">ARCHITETTURA ENTE AUTH</text>
+
+  <rect x="447" y="655" width="386" height="60" rx="4" fill="#FFF7ED" stroke="#FED7AA" stroke-width="1"/>
+  <text x="640" y="673" text-anchor="middle" font-size="10" font-weight="bold" fill="#7C2D12">Cifratura: XChaCha20-Poly1305</text>
+  <text x="640" y="688" text-anchor="middle" font-size="9" fill="#374151">Key derivation: Argon2 dal master password Ente</text>
+  <text x="640" y="702" text-anchor="middle" font-size="9" fill="#374151">Primitives: libsodium (diverso da AES di Vaultwarden)</text>
+
+  <rect x="447" y="722" width="386" height="60" rx="4" fill="#FFF7ED" stroke="#FED7AA" stroke-width="1"/>
+  <text x="640" y="740" text-anchor="middle" font-size="10" font-weight="bold" fill="#7C2D12">E2EE — Server non ha le chiavi</text>
+  <text x="640" y="755" text-anchor="middle" font-size="9" fill="#374151">Seed TOTP cifrati lato client prima del caricamento</text>
+  <text x="640" y="769" text-anchor="middle" font-size="9" fill="#374151">Architettura zero-knowledge analoga a Vaultwarden</text>
+
+  <rect x="447" y="789" width="386" height="65" rx="4" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <text x="640" y="808" text-anchor="middle" font-size="10" font-weight="bold" fill="#065F46">Audit indipendenti verificati</text>
+  <text x="640" y="823" text-anchor="middle" font-size="9" fill="#374151">Cure53 · Marzo 2023 — design crittografico</text>
+  <text x="640" y="837" text-anchor="middle" font-size="9" fill="#374151">Cure53 · Ottobre 2025 — server + infra (CERN-sponsored)</text>
+  <text x="640" y="851" text-anchor="middle" font-size="8" fill="#6B7280">15 finding: 10 vuln + 5 weakness · 12 su 15 corretti durante audit</text>
+
+  <!-- RIGHT: Platform + Flow -->
+  <rect x="858" y="622" width="520" height="338" rx="6" fill="white" stroke="#FED7AA" stroke-width="1.5"/>
+  <text x="1118" y="644" text-anchor="middle" font-size="11" font-weight="bold" fill="#9A3412">COPERTURA PIATTAFORME + FLUSSO LOGIN</text>
+
+  <!-- Platform boxes -->
+  <rect x="868" y="656" width="115" height="62" rx="4" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1"/>
+  <text x="925" y="672" text-anchor="middle" font-size="9" font-weight="bold" fill="#1D4ED8">Windows</text>
+  <text x="925" y="686" text-anchor="middle" font-size="8.5" fill="#374151">App nativa</text>
+  <text x="925" y="699" text-anchor="middle" font-size="8" fill="#6B7280">codice TOTP</text>
+  <text x="925" y="711" text-anchor="middle" font-size="8" fill="#6B7280">copia automatica</text>
+
+  <rect x="993" y="656" width="115" height="62" rx="4" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1"/>
+  <text x="1050" y="672" text-anchor="middle" font-size="9" font-weight="bold" fill="#1D4ED8">Linux</text>
+  <text x="1050" y="686" text-anchor="middle" font-size="8.5" fill="#374151">App nativa</text>
+  <text x="1050" y="699" text-anchor="middle" font-size="8" fill="#6B7280">Flatpak disponibile</text>
+  <text x="1050" y="711" text-anchor="middle" font-size="8" fill="#6B7280">codice TOTP</text>
+
+  <rect x="1118" y="656" width="115" height="62" rx="4" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1"/>
+  <text x="1175" y="672" text-anchor="middle" font-size="9" font-weight="bold" fill="#1D4ED8">Android / S25</text>
+  <text x="1175" y="686" text-anchor="middle" font-size="8.5" fill="#374151">App nativa</text>
+  <text x="1175" y="699" text-anchor="middle" font-size="8" fill="#6B7280">integrazione autofill</text>
+  <text x="1175" y="711" text-anchor="middle" font-size="8" fill="#6B7280">flusso login</text>
+
+  <rect x="1243" y="656" width="125" height="62" rx="4" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1"/>
+  <text x="1305" y="672" text-anchor="middle" font-size="9" font-weight="bold" fill="#1D4ED8">Web / Chrome</text>
+  <text x="1305" y="686" text-anchor="middle" font-size="8.5" fill="#374151">auth.ente.io</text>
+  <text x="1305" y="699" text-anchor="middle" font-size="8" fill="#6B7280">nessuna estensione</text>
+  <text x="1305" y="711" text-anchor="middle" font-size="8" fill="#6B7280">richiesta</text>
+
+  <!-- Login flow -->
+  <rect x="868" y="727" width="500" height="105" rx="4" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1"/>
+  <text x="1118" y="748" text-anchor="middle" font-size="10" font-weight="bold" fill="#7C2D12">FLUSSO LOGIN CON DOPPIO VAULT</text>
+  <text x="1118" y="765" text-anchor="middle" font-size="9" fill="#374151">1  Aprire Bitwarden (Vaultwarden) · sblocco biometrico o master password</text>
+  <text x="1118" y="780" text-anchor="middle" font-size="9" fill="#374151">2  Recuperare username + password del servizio target · autofill Chrome</text>
+  <text x="1118" y="795" text-anchor="middle" font-size="9" fill="#374151">3  Aprire Ente Auth (master password separato) · leggere codice TOTP</text>
+  <text x="1118" y="810" text-anchor="middle" font-size="9" fill="#374151">4  Inserire codice TOTP nel campo del servizio · login completato</text>
+  <text x="1118" y="826" text-anchor="middle" font-size="8" fill="#6B7280">Seed TOTP di Vaultwarden stesso archiviato in Ente Auth — separazione completa</text>
+
+  <!-- Total cost -->
+  <rect x="868" y="840" width="500" height="40" rx="4" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5"/>
+  <text x="1118" y="858" text-anchor="middle" font-size="10" font-weight="bold" fill="#065F46">COSTO TOTALE STACK: ZERO</text>
+  <text x="1118" y="873" text-anchor="middle" font-size="8.5" fill="#374151">Vaultwarden self-hosted (Oracle Cloud Free)  +  Ente Auth cloud E2EE  ·  nessun abbonamento</text>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <rect x="0" y="972" width="1400" height="8" fill="#0F172A"/>
+  <text x="700" y="979" text-anchor="middle" font-size="7" fill="#64748B">Stack open source auditato · Zero vendor lock-in · Vaultwarden: Rust, MIT License · Ente Auth: Cure53 audited 2023 + 2025</text>
+</svg>

@@ -1,0 +1,74 @@
+# ──────────────────────────────────────────────────────────────
+# Perimetro di pubblicazione
+# Su GitHub vengono versionati solo gli artefatti di deployment dello
+# stack: .gitignore, .env.example, il diagramma sorgente in assets/ e,
+# quando saranno realizzati, docker-compose.yml e Caddyfile parametrizzati.
+# La documentazione tecnica e i materiali di partenza restano in locale.
+# ──────────────────────────────────────────────────────────────
+
+# ──────────────────────────────────────────────────────────────
+# Segreti e variabili d'ambiente
+# Il file .env contiene i valori reali (token DuckDNS, hash Argon2
+# dell'ADMIN_TOKEN, hostname dell'istanza) e non deve mai essere
+# tracciato. Solo .env.example, con valori segnaposto, viene versionato.
+# ──────────────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ──────────────────────────────────────────────────────────────
+# Dati persistenti Vaultwarden
+# vw-data/ contiene db.sqlite3 (vault cifrato AES-256) e gli allegati.
+# E' l'intera base dati sensibile dell'istanza: mai versionarla.
+# ──────────────────────────────────────────────────────────────
+vw-data/
+
+# ──────────────────────────────────────────────────────────────
+# Backup del database
+# ──────────────────────────────────────────────────────────────
+backups/
+
+# ──────────────────────────────────────────────────────────────
+# Volumi Caddy (certificati TLS e stato ACME) se montati su filesystem
+# ──────────────────────────────────────────────────────────────
+caddy_data/
+caddy_config/
+
+# ──────────────────────────────────────────────────────────────
+# Materiale segreto generico
+# ──────────────────────────────────────────────────────────────
+*.token
+admin_token*
+*.key
+*.pem
+
+# ──────────────────────────────────────────────────────────────
+# Documentazione tecnica e materiali di partenza
+# Mantenuti solo in locale, aggiornati a ogni step, non pubblicati.
+# ──────────────────────────────────────────────────────────────
+documentazione-tecnica.md
+documentazione-tecnica.docx
+claude-code-handoff.md
+password-manager-guide.docx
+prompt-per-claude-code.md
+
+# ──────────────────────────────────────────────────────────────
+# Diagramma: si versiona la sola sorgente vettoriale assets/*.svg,
+# non il PNG derivato (artefatto locale per il report Word).
+# ──────────────────────────────────────────────────────────────
+assets/*.png
+
+# ──────────────────────────────────────────────────────────────
+# Artefatti temporanei e di sistema
+# ──────────────────────────────────────────────────────────────
+_crops/
+*.log
+*.tmp
+*~
+.DS_Store
+Thumbs.db
+
+# ──────────────────────────────────────────────────────────────
+# Altri file e cartelle da ignorare
+# ──────────────────────────────────────────────────────────────
+_notes/
