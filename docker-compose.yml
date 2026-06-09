@@ -1,0 +1,41 @@
+services:
+
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: unless-stopped
+    environment:
+      DOMAIN: "https://${VW_HOSTNAME}"
+      SIGNUPS_ALLOWED: "${SIGNUPS_ALLOWED:-false}"
+      ADMIN_TOKEN: "${ADMIN_TOKEN_HASH}"
+    volumes:
+      - ./vw-data:/data
+
+  caddy:
+    image: caddy:alpine
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      VW_HOSTNAME: "${VW_HOSTNAME}"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - vaultwarden
+
+  duckdns:
+    image: lscr.io/linuxserver/duckdns:latest
+    container_name: duckdns
+    restart: unless-stopped
+    environment:
+      SUBDOMAINS: "${DUCKDNS_SUBDOMAIN}"
+      TOKEN: "${DUCKDNS_TOKEN}"
+      TZ: "Europe/Rome"
+
+volumes:
+  caddy_data:
+  caddy_config:
