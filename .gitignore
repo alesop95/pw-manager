@@ -84,3 +84,9 @@ id_ed25519*
 id_rsa*
 id_ecdsa*
 *.ppk
+
+# ──────────────────────────────────────────────────────────────
+# Config d'istanza degli script operativi (valori reali, solo locale)
+# Lo script e il template vw.conf.example restano versionati.
+# ──────────────────────────────────────────────────────────────
+scripts/vw.conf

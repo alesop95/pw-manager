@@ -1,0 +1,20 @@
+# Configurazione d'istanza per gli script operativi.
+# Copiare in vw.conf (non versionato) e impostare i valori reali dell'installazione.
+
+# Percorso del database Vaultwarden sull'host
+DB=/home/ubuntu/pw-manager/vw-data/db.sqlite3
+
+# Chiave pubblica age destinataria della cifratura dei backup (non e un segreto)
+AGE_RECIPIENT=age1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# Remote rclone e bucket di destinazione dei backup
+REMOTE=oos:vw-backups
+
+# Giorni di retention dei backup nel bucket
+RETENTION_DAYS=30
+
+# File di configurazione rclone usato dal backup (eseguito come root)
+RCLONE_CONF=/root/.config/rclone/rclone.conf
+
+# Hostname pubblico dell'istanza (usato per il controllo di certificato e DNS)
+VW_HOSTNAME=nomescelto.dedyn.io
