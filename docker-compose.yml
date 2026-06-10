@@ -4,6 +4,11 @@ services:
     image: vaultwarden/server:latest
     container_name: vaultwarden
     restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     environment:
       DOMAIN: "https://${VW_HOSTNAME}"
       SIGNUPS_ALLOWED: "${SIGNUPS_ALLOWED:-false}"
@@ -15,6 +20,11 @@ services:
     image: caddy:alpine
     container_name: caddy
     restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     ports:
       - "80:80"
       - "443:443"
@@ -31,6 +41,11 @@ services:
     image: curlimages/curl:latest
     container_name: ddns
     restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     environment:
       VW_HOSTNAME: "${VW_HOSTNAME}"
       DESEC_TOKEN: "${DESEC_TOKEN}"
