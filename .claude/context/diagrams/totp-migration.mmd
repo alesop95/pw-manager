@@ -1,0 +1,16 @@
+%% Migrazione progressiva dei codici TOTP da Google Authenticator a Ente Auth.
+%% Nessun seme reale figura qui: il diagramma descrive solo il flusso.
+flowchart TB
+    start(["Stato iniziale: TOTP su Google Authenticator"]) --> ente_access
+
+    ente_access["Accesso a Ente Auth dal telefono con sola biometria, senza salvare la master password"]
+    ente_access --> lock["App lock a livello di dispositivo, auto-lock breve, verifica via email"]
+    lock --> migrate["Reimport per microstep: un servizio alla volta in Ente Auth"]
+    migrate --> verify{"Codice Ente verificato sul servizio?"}
+    verify -->|no| migrate
+    verify -->|si| keep["Mantieni il codice anche su Google Authenticator finche tutti migrati"]
+    keep --> samsung["Samsung Pass mantenuto temporaneamente per non interrompere l'autofill"]
+    samsung --> done{"Tutti i codici migrati e verificati?"}
+    done -->|no| migrate
+    done -->|si| decommission["Dismissione di Google Authenticator; valutazione cauta di Samsung Pass"]
+    decommission --> endstate(["Stato finale: TOTP solo su Ente Auth"])

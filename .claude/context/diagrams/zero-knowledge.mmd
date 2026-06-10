@@ -1,0 +1,18 @@
+%% Catena di derivazione zero-knowledge: la chiave nasce sul client, il server vede solo blob cifrati.
+flowchart LR
+    email["Email"] --> kdf
+    mp["Master Password"] --> kdf
+    kdf["Derivazione iterata (PBKDF2/Argon2)"] --> mk["Master Key"]
+    mk --> hkdf["HKDF"]
+    hkdf --> smk["Stretched Master Key"]
+    hkdf --> mph["Master Password Hash"]
+    smk --> enc["Cifratura AES-256 del vault (lato client)"]
+    enc --> blob[("Vault cifrato")]
+
+    blob -->|caricato| server["Server Vaultwarden - custodisce solo blob + hash"]
+    mph -->|autenticazione| server
+
+    classDef local fill:#eef,stroke:#557;
+    classDef remote fill:#efe,stroke:#575;
+    class email,mp,kdf,mk,hkdf,smk,mph,enc local;
+    class blob,server remote;

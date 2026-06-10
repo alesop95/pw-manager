@@ -1,0 +1,21 @@
+%% Flusso di backup cifrato e disaster recovery.
+sequenceDiagram
+    participant Cron as Cron (VM)
+    participant Script as vw-backup.sh
+    participant DB as db.sqlite3
+    participant Age as age (chiave pubblica)
+    participant Rclone as rclone (instance principal)
+    participant OOS as Oracle Object Storage
+
+    Cron->>Script: esecuzione pianificata
+    Script->>DB: sqlite3 .backup (copia coerente)
+    Script->>Age: cifra copia verso destinatario pubblico
+    Age-->>Script: vw-AAAAMMGG.sqlite3.age
+    Script->>Rclone: copy del file cifrato
+    Rclone->>OOS: upload nel bucket
+    Script->>OOS: delete oltre la retention (30 giorni)
+
+    Note over OOS: Disaster recovery
+    OOS-->>Age: download del .age
+    Age-->>DB: decifra con chiave privata OFFLINE
+    Note over DB: restore test su copia temporanea, mai sul db in esercizio

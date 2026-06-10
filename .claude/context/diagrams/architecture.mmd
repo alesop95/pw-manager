@@ -1,0 +1,32 @@
+%% Architettura a tre livelli: client, edge, backend, piu Ente Auth indipendente.
+%% Sanitizzato: <VW_HOSTNAME> e un segnaposto per l'hostname pubblico dell'istanza.
+flowchart TB
+    subgraph CLIENT["Livello client (self-hosted verso <VW_HOSTNAME>)"]
+        win["Windows - estensione Chrome + app desktop"]
+        lin["Linux - client Bitwarden"]
+        sam["Samsung S25 Ultra - app Bitwarden"]
+    end
+
+    subgraph EDGE["Livello edge (VM Oracle Always Free)"]
+        caddy["Caddy - reverse proxy, terminazione TLS, ACME"]
+        ddns["Updater DNS - curl verso deSEC update.dedyn.io"]
+    end
+
+    subgraph BACKEND["Livello backend (rete interna Compose)"]
+        vw["Vaultwarden - API compatibili Bitwarden"]
+        db[("SQLite db.sqlite3 - vault cifrato, volume vw-data/")]
+    end
+
+    desec["deSEC - DNS dinamico"]
+    ente["Ente Auth - authenticator TOTP indipendente"]
+
+    win -->|HTTPS| caddy
+    lin -->|HTTPS| caddy
+    sam -->|HTTPS| caddy
+    caddy -->|HTTP interno :80| vw
+    vw --> db
+    ddns -->|aggiorna record A| desec
+    caddy -.->|ACME Let's Encrypt| desec
+
+    sam -.->|secondo fattore TOTP di Vaultwarden| ente
+    win -.->|secondo fattore TOTP di Vaultwarden| ente

@@ -1,0 +1,20 @@
+%% Sequenza di avvio automatico dopo un riavvio della VM.
+sequenceDiagram
+    participant OS as Sistema (systemd)
+    participant Docker as Demone Docker
+    participant DDNS as Updater DNS
+    participant deSEC as deSEC
+    participant Caddy as Caddy
+    participant LE as Let's Encrypt
+    participant VW as Vaultwarden
+
+    OS->>Docker: avvio del demone (abilitato al boot)
+    Docker->>VW: start (restart: unless-stopped)
+    Docker->>DDNS: start (restart: unless-stopped)
+    Docker->>Caddy: start (restart: unless-stopped)
+    DDNS->>deSEC: aggiorna record A all'IP corrente
+    Caddy->>deSEC: risoluzione hostname
+    Caddy->>LE: rinnovo/validazione certificato (ACME)
+    LE-->>Caddy: certificato valido
+    Caddy->>VW: pronto a inoltrare HTTPS -> :80
+    Note over OS,VW: nessun intervento manuale richiesto al riavvio

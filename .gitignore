@@ -90,3 +90,17 @@ id_ecdsa*
 # Lo script e il template vw.conf.example restano versionati.
 # ──────────────────────────────────────────────────────────────
 scripts/vw.conf
+
+# ──────────────────────────────────────────────────────────────
+# Sistema di progetto portabile: livello privato e personale
+# (cfr. .claude/PROJECT-SYSTEM.md). _notes/ e gia escluso sopra.
+# ──────────────────────────────────────────────────────────────
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Estratti temporanei dei .docx (cartelle scratch)
+.tmp-docx-*/
+_notes/.tmp-docx-*/
+
+# Documenti Word grezzi (binari). Dichiarare qui eventuali eccezioni curate.
+*.docx
