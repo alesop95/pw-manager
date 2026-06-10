@@ -27,14 +27,16 @@ services:
     depends_on:
       - vaultwarden
 
-  duckdns:
-    image: lscr.io/linuxserver/duckdns:latest
-    container_name: duckdns
+  ddns:
+    image: curlimages/curl:latest
+    container_name: ddns
     restart: unless-stopped
     environment:
-      SUBDOMAINS: "${DUCKDNS_SUBDOMAIN}"
-      TOKEN: "${DUCKDNS_TOKEN}"
-      TZ: "Europe/Rome"
+      VW_HOSTNAME: "${VW_HOSTNAME}"
+      DESEC_TOKEN: "${DESEC_TOKEN}"
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - 'while true; do curl -sS --ipv4 "https://update.dedyn.io/?hostname=$${VW_HOSTNAME}" --header "Authorization: Token $${DESEC_TOKEN}"; echo; sleep 300; done'
 
 volumes:
   caddy_data:
