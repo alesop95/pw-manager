@@ -31,3 +31,4 @@ Il modello e *zero-knowledge*: la chiave che cifra il vault e derivata localment
 | Flusso di backup e disaster recovery | `diagrams/backup-flow.mmd` | sqlite backup, cifratura age, Object Storage, restore |
 | Sequenza di avvio della VM | `diagrams/boot-sequence.mmd` | Docker, updater DNS, deSEC, Caddy, ACME, Vaultwarden |
 | Migrazione dei TOTP | `diagrams/totp-migration.mmd` | Google Authenticator, Ente Auth, dismissione progressiva |
+| Backup della working tree su SD | `diagrams/local-backup.mmd` | cartella di progetto, chiave SSH, bundle cifrato, supporto removibile |

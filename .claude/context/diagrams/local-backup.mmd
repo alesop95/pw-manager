@@ -1,0 +1,21 @@
+%% Flusso di backup della cartella di progetto su supporto removibile (SD privata).
+%% Invariante di sicurezza: la working tree resta priva di segreti in chiaro.
+flowchart LR
+    subgraph FOLDER["E:\\pw-manager (working tree)"]
+        code["Artefatti di deployment: docker-compose, Caddyfile, scripts, .env.example"]
+        notes["_notes/ (documentazione privata con valori reali)"]
+        pub["secrets/id_ed25519_oracle.pub (non segreto)"]
+        bundle["secrets/secrets-bundle.7z (cifrato AES-256)"]
+    end
+
+    key["Chiave privata SSH (cifrata da passphrase)"]
+    sd[("SD privata - copia del filesystem")]
+
+    key -->|spostata FUORI dalla cartella| ssh[".ssh dell'utente (non incluso nel backup)"]
+    FOLDER -->|copia integrale| sd
+
+    note1["Il .gitignore non incide: la copia su SD prende tutto cio che e su disco"]
+    note2["Invariante: nessun segreto in chiaro nella working tree; il solo artefatto sensibile e il bundle, cifrato"]
+
+    FOLDER -.- note2
+    sd -.- note1

@@ -80,3 +80,12 @@ Contesto: reinserire la master password a ogni autocompletamento e scomodo; serv
 Decisione: abilitare lo sblocco con PIN dell'estensione Chrome (Strada A), con il PIN valido solo per quella installazione del browser.
 Motivazione: l'usabilita migliora senza esporre la master password; il PIN non sblocca nient'altro e resta locale al dispositivo.
 Conseguenze: il PIN dell'estensione entra nella mappa dei segreti come elemento locale per-installazione; la master password resta necessaria per la riconfigurazione.
+
+## ADR-010 — Custodia della chiave SSH fuori dalla working tree
+
+Data: 2026-06-10
+Stato: accettata
+Contesto: la cartella di progetto viene copiata su una SD privata come backup; una copia del filesystem ignora il `.gitignore` e includerebbe tutto cio che sta su disco. La chiave privata SSH risiedeva in `secrets/`, dentro la cartella di progetto.
+Decisione: tenere la chiave privata SSH sotto la directory `.ssh` dell'utente, fuori dalla working tree, lasciando in `secrets/` solo la chiave pubblica e il bundle cifrato; la copia di riserva della chiave resta nel bundle.
+Motivazione: minima esposizione, la chiave non entra nel backup su supporto removibile. La chiave e comunque protetta da passphrase, quindi il file in se non e un segreto in chiaro, ma la separazione e prudente. Il recupero da nuova macchina avviene dal bundle, con i tre livelli descritti in `deployment.md`.
+Conseguenze: la configurazione SSH riferisce la chiave nella nuova posizione; la rimozione dell'originale da `secrets/` richiede elevazione perche di proprieta di Administrators.

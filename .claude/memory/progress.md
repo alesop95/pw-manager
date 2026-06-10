@@ -1,5 +1,11 @@
 # Work-log
 
+## 2026-06-10 — Chiave SSH spostata fuori dalla working tree
+
+Commit: nessuno (intervento locale su `~/.ssh` e config SSH)
+File toccati: `~/.ssh/id_ed25519_oracle` (copia blindata), `~/.ssh/config` (IdentityFile aggiornato); aggiunti il runbook di recupero in `deployment.md` e il diagramma `diagrams/local-backup.mmd`.
+Motivo: la cartella `E:\pw-manager` viene copiata su SD privata come backup, e la copia del filesystem ignora il `.gitignore`. La chiave privata SSH risiedeva in `secrets/`; benche protetta da passphrase, e stata spostata sotto `.ssh` dell'utente per tenerla fuori dal perimetro del backup. In `secrets/` restano solo il `.pub` e il bundle cifrato. Connessione verificata interattivamente con esito positivo; originale rimosso da `secrets/` dopo presa di possesso (`takeown`), per cui la working tree e priva di chiavi private.
+
 ## 2026-06-10 — Adozione del sistema di progetto portabile
 
 Commit: (da eseguire a mano; HEAD di riferimento fd6a6cb)
