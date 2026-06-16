@@ -1,5 +1,17 @@
 # Work-log
 
+## 2026-06-16 — Prassi del resume prompt sotto _notes
+
+Commit: nessuno (da versionare a mano; `_notes/` resta privato)
+File toccati: `_notes/RESUME-PROMPT.md` (creato con lo stato corrente, sostituisce quello che era in radice), `CLAUDE.md` (puntatore aggiornato a `_notes/`). Standard in J:\ (`template-claude-developing`): corretto nei due PROMPT il path del bundle al nuovo nome della cartella, aggiunta la prassi del resume prompt, creato lo scheletro `templates/_notes/RESUME-PROMPT.md`, prassi incisa nel template `CLAUDE.md`.
+Motivo: poter riesumare la sessione da un prompt pronto sotto `_notes`, privato e ignorato, aggiornato a fine sessione con lo stato raggiunto. La cartella di riferimento dello standard era stata rinominata da `_a project folder setup under project path_` a `template-claude-developing`, quindi i PROMPT puntavano a un percorso non piu esistente.
+
+## 2026-06-11 — Resa autonoma dei diagrammi in SVG
+
+Commit: nessuno (da versionare a mano)
+File toccati: `tools/render-diagrams.mjs`, `tools/README.md`, i sette `.claude/context/diagrams/*.svg` generati; template aggiornato in J:\ (`templates/tools/` e voce nella mappa di istanziazione di `templates/README.md`).
+Motivo: rendere ogni progetto autonomo nella generazione degli SVG dai sorgenti Mermaid. Lo script riusa il browser Chromium-based di sistema (Edge o Chrome) disattivando il download del Chromium di Puppeteer, per una resa snella e offline dopo la prima esecuzione. Lo strumento e stato aggiunto anche al bundle template per i progetti futuri.
+
 ## 2026-06-10 — Chiave SSH spostata fuori dalla working tree
 
 Commit: nessuno (intervento locale su `~/.ssh` e config SSH)

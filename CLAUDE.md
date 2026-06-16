@@ -8,7 +8,7 @@ Stack self-hosted per la gestione di password e secondo fattore: un server *Vaul
 
 ## Procedura di ripresa in una sessione nuova
 
-Lo stato del progetto e interamente recuperabile su disco. All'inizio di una sessione si legge per primo `.claude/memory/index.md`, che fotografa il commit di riferimento e lo stato di verifica delle schede. Se esiste una feature attiva, si legge `.claude/context/current-work.md`. Si invoca quindi la skill `sync-context` per misurare la deriva delle schede rispetto a HEAD e si leggono solo le schede pertinenti al compito, mai tutte insieme. La storia delle decisioni e dei passi si consulta in `.claude/memory/decisions.md` e `.claude/memory/progress.md`.
+Lo stato del progetto e interamente recuperabile su disco. Per una ripresa rapida esiste `_notes/RESUME-PROMPT.md`, privato e ignorato, con lo stato raggiunto e un prompt pronto da incollare, aggiornato alla fine di ogni sessione. All'inizio di una sessione si legge per primo `.claude/memory/index.md`, che fotografa il commit di riferimento e lo stato di verifica delle schede. Se esiste una feature attiva, si legge `.claude/context/current-work.md`. Si invoca quindi la skill `sync-context` per misurare la deriva delle schede rispetto a HEAD e si leggono solo le schede pertinenti al compito, mai tutte insieme. La storia delle decisioni e dei passi si consulta in `.claude/memory/decisions.md` e `.claude/memory/progress.md`.
 
 ## Indice dei file satellite tracciati
 
