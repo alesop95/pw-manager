@@ -1,9 +1,7 @@
 # Snapshot di sincronizzazione
 
 ## Stato
-Branch attivo:         main
-Commit di riferimento: fd6a6cb
-Data snapshot:         2026-06-10
+Branch attivo:         main Commit di riferimento: fd6a6cb Data snapshot:         2026-06-10
 
 ## Stato di verifica delle schede
 | Scheda | last-verified | Stato |
