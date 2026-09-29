@@ -33,6 +33,13 @@ Schede tecniche, sotto `.claude/context/`, con frontmatter di riconciliazione an
 
 I diagrammi sorgente in formato Mermaid sono sotto `.claude/context/diagrams/`. Le regole modulari sono sotto `.claude/rules/` e le skill richiamabili sotto `.claude/skills/`. Lo standard di sistema completo e in `.claude/PROJECT-SYSTEM.md`.
 
+Norme caricate su richiesta, una riga per situazione con le parole con cui si presenta, così che il caricamento non dipenda dal ricordare che la norma esista.
+
+- `git worktree list` mostra più di un albero, se ne crea o se ne rimuove uno, si deve decidere da dove leggere la memoria versionata: skill `alberi-di-lavoro`.
+- Un recupero web fallisce con 403 o con una pagina di verifica anti-bot, la fonte sta su Reddit o su Discord, serve la trascrizione di un video, si sta per annotare una fonte non letta: skill `fonti-non-recuperabili`.
+- Si scrive o si valuta una prova automatica, si chiude un difetto, una verifica manuale smentisce una suite verde, si sta per dichiarare completo un intervento il cui scopo era un effetto misurabile: skill `prove-che-misurano`.
+- Si inizializza o si allinea il progetto, oppure cambia il modo in cui si prova e si rilascia, e va deciso come separare test e produzione: skill `separazione-ambienti`.
+
 ## Vincoli di team
 
 Le operazioni git restano manuali: l'agente prepara i file e fornisce i comandi, ma non esegue mai `git add`, `commit` o `push`. L'identita git e impostata a livello locale del repository, con l'identita personale, e non va portata a livello globale. Lo stile della documentazione segue `.claude/rules/interaction-style.md`. L'agente non scrive in `memory/` e `context/` di propria iniziativa: gli aggiornamenti avvengono su richiesta esplicita, a tutela del controllo umano sul versionamento. Nessun valore segreto, ne identificativo d'istanza reale (hostname, indirizzo IP pubblico, namespace), compare nei file tracciati.
